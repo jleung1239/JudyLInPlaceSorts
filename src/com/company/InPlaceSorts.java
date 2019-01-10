@@ -3,9 +3,7 @@ package com.company;
 public class InPlaceSorts {
 
 
-    // goes through the list, swaps while # is bigger than the next. resets at next starting int if it doesnt swap
-
-    //needs fixing!!!!!
+    // goes through the list, swaps while # is bigger than the next.
     public static void insertionSort(int[] list1){
         int temp;
         int i = 1;
