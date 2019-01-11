@@ -21,7 +21,42 @@ public class InPlaceSorts {
         }
     }
 
-    //fix this to account for double int...?
+    //second attempt
+    public static void insertionSort2(int[] list1){
+        //move the smallest int to the front, check it backwards following the (new) one that got swapped.
+        // it checks backwards until it stops swapping. then it swaps the forward one again
+        int temp;
+        int swap;
+        int i = 1; //next starting int
+        int b; //keeps track of the swapped one
+        while (i < list1.length){
+            if (list1[i] < list1[i-1]){
+                temp = list1[i-1];
+                list1[i-1] = list1[i];
+                list1[i] = temp;
+                b = i-1;
+                if (b > 0){
+                    swap = 1; // fix this, it will loop forever rn
+                    while ( swap > 0 ){
+                        if (list1[b] < list1[b-1] ){
+                            temp = list1[b];
+                            list1[b] = list1[b-1];
+                            list1[b-1] = temp;
+                            b--;
+                        }
+                        else
+                        {
+                            swap = 0;
+                        }
+                    }
+                }
+            }
+            i++;
+        }
+
+    }
+
+
     public static void selectionSort(double[] list1){
         int i; //goes through the whole list
         int x = 0; //keeps track of the next smallest int
