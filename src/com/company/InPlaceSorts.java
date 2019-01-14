@@ -3,7 +3,8 @@ package com.company;
 public class InPlaceSorts {
 
     // goes through the list, swaps while # is bigger than the next.
-    public static void insertionSort(int[] list1){
+    // this is based on how sorting a hand of cards is like, but it is unfinished and discontinued
+    public static void insertionSort0(int[] list1){
         int temp;
         int i = 1;
         int b = 0; //next starting int
@@ -21,8 +22,8 @@ public class InPlaceSorts {
         }
     }
 
-    //second attempt
-    public static void insertionSort2(int[] list1){
+    //second attempt, based off the dance video
+    public static void insertionSort(int[] list1){
         //move the smallest int to the front, check it backwards following the (new) one that got swapped.
         // it checks backwards until it stops swapping. then it swaps the forward one again
         int temp;
@@ -36,8 +37,8 @@ public class InPlaceSorts {
                 list1[i] = temp;
                 b = i-1;
                 if (b > 0){
-                    swap = 1; // fix this, it will loop forever rn
-                    while ( swap > 0 ){
+                    swap = 1; // you might need to fix this to condense some code
+                    while ( swap > 0 && b > 0){
                         if (list1[b] < list1[b-1] ){
                             temp = list1[b];
                             list1[b] = list1[b-1];
@@ -74,6 +75,59 @@ public class InPlaceSorts {
             y++;
             x = y;
 
+        }
+    }
+
+
+
+    // sort in 0-10, alphabetical order?
+    // i have no idea how special characters are going to be sorted so i guess their value will be 1 so itll sort from smallest to most special charas
+    public static void bubbleSort(String[] arr){
+        int swap = 1;
+        String temp;
+        while (swap > 0){
+            swap = 0;
+            for (int i = 1; i < arr.length; i++){
+                if ((arr[i-1].compareTo(arr[i])) > 0){
+                    temp = arr[i];
+                    arr[i] = arr[i-1];
+                    arr[i-1] = temp;
+                    swap++;
+                }
+            }
+        }
+
+    }
+
+
+    //check if arr is sorted from least to greatest
+    public static boolean isSorted(int[] arr){
+        for (int i = 1; i < arr.length; i++){
+            if (arr[i-1] > arr[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    //checks if the sum of arrays are the same before and after being sorted
+    public static boolean checkSum(int[] before, int[] after){
+        int i;
+        int beforeSum = 0;
+        int afterSum = 0;
+        for (i = 0; i < before.length; i++){
+            beforeSum += before[i];
+        }
+        for (i=0; i < after.length; i++){
+            afterSum += after[i];
+        }
+        if (beforeSum == afterSum){
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }
