@@ -130,4 +130,42 @@ public class InPlaceSorts {
             return false;
         }
     }
+
+
+    // creates array of random integers from 0 to 1000
+    // count = length of array
+    public static int[] randomIntArr(int count){
+        int arr[] = new int[count];
+        for (int i = 0; i < arr.length; i++)
+        {
+            arr[i] = (int)(Math.random() * 1001);
+        }
+        return arr;
+    }
+
+    public static int[] copyIntArray(int[] arr){
+        int copy[] = new int[arr.length];
+        for(int i = 0 ; i < arr.length; i++){
+            copy[i] = arr[i];
+        }
+        return copy;
+    }
+
+    public static double[] randomDoubleArr(int count){
+        double arr[] = new double[count];
+        for (int i = 0; i < arr.length; i++)
+        {
+            arr[i] = Math.round((Math.random() * 1001)*100);
+            arr[i] = arr[i]/100;
+        }
+        return arr;
+    }
+
+    public static double[] copyDoubleArray(double[] arr){
+        double copy[] = new double[arr.length];
+        for(int i = 0 ; i < arr.length; i++){
+            copy[i] = arr[i];
+        }
+        return copy;
+    }
 }

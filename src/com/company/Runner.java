@@ -6,38 +6,58 @@ public class Runner {
 
         //remember to put in timer and both checks
 
-        System.out.println("Testing insertionSort for int arrays:");
-        int[] testArr = {8,6,7,5,3,0,9,10,1,2,3};
-        System.out.print("Before: ");
-        for (int num:testArr)
-            System.out.print(num+" ");
-        System.out.println();
+        System.out.println("Creating Random Int Array...");
+        int[] testArr1 =  InPlaceSorts.randomIntArr(7);
+        int[] sortedArr1 = InPlaceSorts.copyIntArray(testArr1);
+        long timeStart = 0;
+        long timeStop = 0;
 
-        InPlaceSorts.insertionSort(testArr);
+        System.out.println("Sorting using insertionSort");
+        timeStart = System.nanoTime();
+        InPlaceSorts.insertionSort(sortedArr1);
+        timeStop = System.nanoTime()-timeStart;
 
-        //Print it out after you sort
-        System.out.print("After: ");
-        for (int num:testArr)
-            System.out.print(num+" ");
-        System.out.println();
-
-
-
-        System.out.println();
-        System.out.println("Testing selectionSort for double arrays:");
-        double[] test1 = {6.4,7.8,5.1,5.7,3.5,2,3.9};
-        System.out.print("Before: ");
-        for (double num:test1)
-            System.out.print(num+" ");
-        System.out.println();
-
-        InPlaceSorts.selectionSort(test1);
+        System.out.println("Time for insertionSort: "+timeStop+" nanoseconds");
 
         //Print it out after you sort
-        System.out.print("After: ");
-        for (double num:test1)
+        System.out.print("Before: ");
+        for (int num:testArr1)
             System.out.print(num+" ");
         System.out.println();
+
+        System.out.print("After: ");
+        for (int num:sortedArr1)
+            System.out.print(num+" ");
+        System.out.println();
+
+
+
+        System.out.println();
+        System.out.println("Creating Random Double Array...");
+        double[] testArr2 =  InPlaceSorts.randomDoubleArr(7);
+        double[] sortedArr2 = InPlaceSorts.copyDoubleArray(testArr2);
+        timeStart = 0;
+        timeStop = 0;
+
+        System.out.println("Sorting using selectionSort");
+        timeStart = System.nanoTime();
+        InPlaceSorts.selectionSort(sortedArr2);
+        timeStop = System.nanoTime()-timeStart;
+
+        System.out.println("Time for selectionSort: "+timeStop+" nanoseconds");
+
+        //Print it out after you sort
+        System.out.print("Before: ");
+        for (double num:testArr2)
+            System.out.print(num+" ");
+        System.out.println();
+
+        System.out.print("After: ");
+        for (double num:sortedArr2)
+            System.out.print(num+" ");
+        System.out.println();
+
+        //waluigi just gotta fix bubble sort
 
 
 
